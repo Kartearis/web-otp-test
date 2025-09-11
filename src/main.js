@@ -1,6 +1,7 @@
 import './style.css'
 
 const log = document.querySelector('#log');
+const input = document.querySelector('input');
 
 document.querySelector('#otpButton').addEventListener('click', () => {
 
@@ -11,13 +12,16 @@ document.querySelector('#otpButton').addEventListener('click', () => {
   // Can use ac to abort waiting on e.g. timeout or when form is submitted manually
   const ac = new AbortController();
 
+  log.innerHtml = log.innerHtml + '<br>' + 'Sent (kinda) sms code';
+
+
   navigator.credentials.get({
     otp: { transport:['sms'] },
     signal: ac.signal
   }).then(otp => {
     // Process form here
     input.value = otp.code;
-    log.innerText = `Submitted form with code ${otp.code}`;
+    log.innerHtml = log.innerHtml + '<br>' + `Submitted form with code ${otp.code}`;
     
   }).catch(err => {
     alert(err);
