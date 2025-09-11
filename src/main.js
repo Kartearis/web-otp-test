@@ -1,5 +1,5 @@
 import './style.css'
-
+console.log('run js');
 const log = document.querySelector('#log');
 
 document.querySelector('#otpButton').addEventListener('click', () => {
