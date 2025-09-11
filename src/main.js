@@ -1,7 +1,7 @@
 import './style.css'
 
 const log = document.querySelector('#log');
-const input = document.querySelector('input');
+const input = document.querySelector('#input');
 
 document.querySelector('#otpButton').addEventListener('click', () => {
 
