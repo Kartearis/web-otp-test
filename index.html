@@ -15,6 +15,9 @@
     <button id="otpButton" type="button"> Запросить код </button>
     <div id="log"></div>
   </body>
-  <script src="node_modules/eruda/eruda.js"></script>
-  <script>eruda.init();</script>
+  <script type="module">
+    import eruda from "eruda";
+
+    eruda.init();
+  </script>
 </html>
